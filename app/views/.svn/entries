@@ -1,0 +1,52 @@
+10
+
+dir
+8487
+svn://shakadev.dhshawaii.net:8090/uhmc_alumni/app/views
+svn://shakadev.dhshawaii.net:8090
+
+
+
+2012-06-05T23:06:12.361936Z
+8476
+rbuckley
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2e1f03ba-0af5-4189-a106-95c72c21b8f9
+
+alumnis
+dir
+
+employments
+dir
+
+layouts
+dir
+
+main
+dir
+
+partials
+dir
+
+schools
+dir
+
+sessions
+dir
+
+users
+dir
+

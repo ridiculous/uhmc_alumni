@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Maui College - Careers</title>
+  <%= stylesheet_link_tag 'general', 'bootstrap-c' %>
+  <%= javascript_include_tag :all %>
+  <%= csrf_meta_tag %>
+  <%= favicon_link_tag "/images/uh_icon.png" %>
+  <noscript>
+    <%= stylesheet_link_tag "noscript_sheet" %>
+  </noscript>
+</head>
+<body style="background: url('/images/new_bg_v3.jpg') top repeat-x">
+<a name="top"></a>
+
+<div class="shiftcontainer">
+  <div class="shiftcontainer" style="width: 1120px;margin-top: 5px;height:120px">
+    <div class="shadow" style="background:transparent;border:none">
+      <div class="innerdiv" style="background:transparent;border:none;margin-bottom: 0;">
+
+        <div style="width:150px;height:100px;top:10px;position:absolute;z-index: 111111">
+          <a href="http://maui.hawaii.edu" target="_blank"><img src="/images/uhmc_logo.gif" alt="Maui College Home" title="Maui College Home" border="0"/></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div id="wrap" style="width:100%">
+    <div style="float:right;width:auto;padding-bottom: 6px;">
+      <%= form_tag(search_path, :method => "get") do %>
+          <span class="categories">Search: </span>
+          <%= text_field_tag(:users_search, params[:users_search], :autofocus => true) %>
+          <span class="c">Category</span>
+          <%= build_search_options(params[:cat]) %>
+          <%= submit_tag "Search", :name => nil, :class => 'btn primary' %>
+          <%= link_to_void "Clear", :name => nil, :class => 'btn', :id => 'clearBtn' %>
+      <% end %>
+    </div>
+  </div>
+  <div class="reset"></div>
+  <div class="box-container" id="admin_header">
+    <div class="colorful gray">
+      <div class='header' style="z-index: 9999999999;padding: 10px;">
+        <% if current_user %>
+            <div class="aloha-user">Aloha, <%= "#{current_user.username} <small>(#{current_user.role})</small>".html_safe if current_user.username %></div>
+            <div class="nav-links">
+              <%= link_to 'Home', alumnis_path, :class => 'btn info' %>
+              <%= link_to "New Record", new_alumni_path(:format => :js), :remote => true, :id => 'new_alumni_link', :class => 'btn info' %>
+              <%= link_to "Account", edit_user_path(session[:user_id]), :class => 'btn info' %>
+              <%= link_to "Manage users", "/sessions/show", :class => 'btn info' %>
+              <%= link_to "Sign out", log_out_path, :class => 'btn danger' %>
+            </div>
+            <div class="reset"></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="box-container" id="begin_content">
+
+    <% if notice || request.flash.any? %>
+        <div id="notice" class="flash <%= request.flash.alert.blank? ? "info" : "error" %>">
+          <div class="header" id="notice_content">
+            <%= notice || request.flash.discard.alert || request.flash.discard.notice %>
+          </div>
+        </div>
+    <% end %>
+
+    <%= yield %>
+  </div>
+
+</div>
+<div>
+  <p style="text-align:center;font-size:13px;">
+    Please direct any questions or concerns to: <br/>
+    University of Hawaii Maui College<b> Software Development Center (808) 984-3626</b><br/>
+    <a href="mailto:support@mauisdc.com" title="Email Maui Software Development Center Support Team" style="font-size:13px;">support@mauisdc.com</a>
+  </p>
+</div>
+</body>
+</html>

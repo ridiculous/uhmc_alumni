@@ -1,0 +1,4 @@
+<%= content('Edit Record') do %>
+    <%= render 'form' %>
+<% end %>
+

@@ -1,0 +1,189 @@
+<div class="alumni-form-wrap">
+  <%= form_for(@alumni, :html => {:'data-type' => 'html', :id => 'alumni_form', :remote => true}) do |f| %>
+      <div class="list-form-errors"></div>
+      <%= show_error_messages(@alumni) %>
+
+      <div id="top_half" class="clearfix">
+        <div class="alum-div">
+          <div class="field">
+            <div style="width: 100%">
+              <%= f.label :first_name, mark_required('First name') %>
+            </div>
+            <%= f.text_field :first_name, :maxlength => 35 %>
+          </div>
+        </div>
+        <div class="alum-div">
+          <div class="field">
+            <div style="width: 100%">
+              <%= f.label :last_name, mark_required('Last name') %>
+            </div>
+            <%= f.text_field :last_name, :maxlength => 55 %>
+          </div>
+        </div>
+        <div class="alum-div">
+          <div class="field">
+            <div><%= f.label :email, mark_required('Email') %></div>
+            <div><%= f.text_field :email, :maxlength => 75 %></div>
+          </div>
+        </div>
+        <div class="alum-div">
+          <div class="field">
+            <div class="actions" style="padding-top: 20px;">
+              <%= f.submit 'Save Record', :class => 'btn success' %>
+              <%= cancel_link(alumnis_path) %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% if @alumni && @alumni.new_record? %>
+          <div style="padding: 0 18px;">
+            <%= link_to_void('All fields ...', :class => 'btn', :id => 'all_fields_btn') %>
+          </div>
+      <% end %>
+
+      <div style="<%= 'display:none' if @alumni && @alumni.new_record? %>" id="hidden_half">
+        <div class="alum-div">
+          <div class="field">
+            <div><%= f.label :mi, "Middle Initial" %></div>
+            <div><%= f.text_field :mi, :maxlength => 1 %></div>
+          </div>
+          <div class="field clearfix">
+            <div style="width:48%;float:left;">
+              <div><%= f.label :gender %></div>
+              <div><%= f.select :gender, (%w[Male Female]) %></div>
+            </div>
+            <div style="width:48%;float:left;">
+              <div><%= f.label :marital_status %></div>
+              <div><%= f.select :marital_status, (%w[Single Married]) %></div>
+            </div>
+          </div>
+          <div class="field">
+            <%= f.label :home_phone %>
+            <br/>
+            <%= f.text_field :home_phone, :maxlength => 25 %>
+          </div>
+          <div class="field">
+            <%= f.label :cell_phone %>
+            <br/>
+            <%= f.text_field :cell_phone, :maxlength => 25 %>
+          </div>
+          <div class="field">
+            <%= f.label :work_phone %>
+            <br/>
+            <%= f.text_field :work_phone, :maxlength => 25 %>
+          </div>
+
+        </div>
+
+        <div class="alum-div">
+          <div class="field">
+            <%= f.label :country %>
+            <br/>
+            <%= f.text_field :country, :maxlength => 55 %>
+          </div>
+          <div class="field">
+            <%= f.label :mailing_address %>
+            <br/>
+            <%= f.text_field :mailing_address, :maxlength => 65 %>
+          </div>
+          <div class="field">
+            <%= f.label :mailing_address_2 %>
+            <br/>
+            <%= f.text_field :mailing_address_2, :maxlength => 55 %>
+          </div>
+          <div class="field">
+            <%= f.label :city %>
+            <br/>
+            <%= f.text_field :city, :maxlength => 55 %>
+          </div>
+          <div class="field">
+            <div style="width: 100%">
+              <%= f.label :zip_code %>
+            </div>
+            <%= f.text_field :zip_code, :maxlength => 25 %>
+          </div>
+        </div>
+
+        <div class="alum-div">
+          <div class="field">
+            <%= f.label :secondary_email %>
+            <br/>
+            <%= f.text_field :secondary_email, :maxlength => 75 %>
+          </div>
+          <div class="field">
+            <%= f.label :state %>
+            <br/>
+            <%= f.select :state, (state_list) %>
+          </div>
+          <div class="field">
+            <div><%= f.label :location %></div>
+            <div>
+              <%= f.select :location, (maui_locations), :include_blank => true %>
+              <div>
+                <div class="header" id="other_location" style="display: none;">
+                  <%= f.text_field :other_location %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <div><%= f.label :ethnicity %></div>
+            <div>
+              <%= f.select :ethnicity, (list_ethnicity), :include_blank => true %>
+              <div>
+                <div class="header" id="other_ethnicity" style="display: none;">
+                  <%= f.text_field :other_ethnicity %>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="reset"></div>
+
+  <% end %>
+</div>
+
+<script type="text/javascript">
+    ;
+    (function ($) {
+        var f = {
+            showHiddenFields:function () {
+                var self = $(this);
+                self.parent().fadeOut('fast');
+                $('#hidden_half').slideDown();
+            }
+        };
+        $(document).ready(function () {
+            $('#other_ethnicity a, #other_location a').bind('click', function () {
+                $(this).parent().parent().parent().slideUp();
+            });
+            $('#alumni_ethnicity').bind('change', function () {
+                var self = $(this);
+                if (self.val() == 'other') {
+                    $('#other_ethnicity').slideDown();
+                } else {
+                    $('#other_ethnicity').hide();
+                }
+                return false;
+            });
+
+            $('#alumni_location').bind('change', function () {
+                var self = $(this);
+                if (self.val() == 'other') {
+                    $('#other_location').slideDown();
+                } else {
+                    $('#other_location').hide();
+                }
+                return false;
+            });
+            $('a#all_fields_btn').bind('click', function () {
+                f.showHiddenFields.call(this);
+                return false;
+            });
+
+        });
+    })(jQuery);
+</script>

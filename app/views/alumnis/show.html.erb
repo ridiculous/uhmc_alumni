@@ -1,0 +1,132 @@
+<%= content("Record Details") do %>
+    <div class="alum-div">
+      <p>
+        <b>First name:</b>
+        <%= @alumni.first_name %>
+      </p>
+
+      <p>
+        <b>Last name:</b>
+        <%= @alumni.last_name %>
+      </p>
+
+      <p>
+        <b>Middle Initial:</b>
+        <%= @alumni.mi %>
+      </p>
+
+      <p>
+        <b>Email:</b>
+        <%= @alumni.email %>
+      </p>
+
+      <p>
+        <b>Gender:</b>
+        <%= @alumni.gender %>
+      </p>
+
+      <p>
+        <b>Marital Status:</b>
+        <%= "#{@alumni.marital_status ? "Married" : "Single"}" %>
+      </p>
+
+      <p>
+        <b>Ethnicity:</b>
+        <%= @alumni.ethnicity %>
+      </p>
+
+
+    </div>
+
+    <div class="alum-div">
+      <p>
+        <b>Location:</b>
+        <%= @alumni.location %>
+      </p>
+
+      <p>
+        <b>Mailing address:</b>
+        <%= @alumni.mailing_address %>
+      </p>
+
+      <p>
+        <b>Mailing address 2:</b>
+        <%= @alumni.mailing_address_2 %>
+      </p>
+
+      <p>
+        <b>City:</b>
+        <%= @alumni.city %>
+      </p>
+
+      <p>
+        <b>State:</b>
+        <%= @alumni.state %>
+      </p>
+
+      <p>
+        <b>Country:</b>
+        <%= @alumni.country %>
+      </p>
+
+      <p>
+        <b>Zip code:</b>
+        <%= @alumni.zip_code %>
+      </p>
+    </div>
+
+    <div class="alum-div">
+      <p>
+        <b>Secondary address:</b>
+        <%= @alumni.secondary_address %>
+      </p>
+
+      <p>
+        <b>Secondary address 2:</b>
+        <%= @alumni.secondary_address_2 %>
+      </p>
+
+      <p>
+        <b>Secondary city:</b>
+        <%= @alumni.secondary_city %>
+      </p>
+
+      <p>
+        <b>Secondary state:</b>
+        <%= @alumni.secondary_state %>
+      </p>
+
+      <p>
+        <b>Secondary country:</b>
+        <%= @alumni.secondary_country %>
+      </p>
+
+      <p>
+        <b>Secondary zip code:</b>
+        <%= @alumni.secondary_zip_code %>
+      </p>
+    </div>
+
+    <div class="alum-div">
+      <p>
+        <b>Secondary email:</b>
+        <%= @alumni.secondary_email %>
+      </p>
+
+      <p>
+        <b>Home phone:</b>
+        <%= @alumni.home_phone %>
+      </p>
+
+      <p>
+        <b>Cell phone:</b>
+        <%= @alumni.cell_phone %>
+      </p>
+
+      <p>
+        <b>Work phone:</b>
+        <%= @alumni.work_phone %>
+      </p>
+    </div>
+    <div class="reset"></div>
+<% end %>

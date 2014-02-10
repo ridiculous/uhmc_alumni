@@ -1,0 +1,21 @@
+<div class="colorful gray">
+
+  <div class="content">
+    <h2>Manage Users</h2>
+
+    <h3 style="color:grey">Please reconfirm your password</h3>
+
+    <%= form_tag("confirmation", :method => "post") do %>
+        <div><%= label_tag :password %></div>
+        <div><%= password_field_tag :password %></div>
+        <p class="buttons">
+          <%= submit_tag "Continue", :class => 'btn success' %>
+        </p>
+    <% end %>
+  </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#password').focus();
+    });
+</script>

@@ -1,0 +1,45 @@
+<div class="colorful gray">
+  <div class="content">
+    <div style="height:635px;">
+      <h2>Create New User </h2>
+      <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+            <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+      <p>
+        User role:
+        &nbsp;
+        <%= radio_button("user", "role", "alumni", {:id => "_alumni", :checked => true}) %>
+        <span><strong>Alumni</strong></span>
+        &nbsp;or&nbsp;
+        <%= radio_button("user", "role", "admin", {:id => "_admin"}) %>
+        <span><strong>Administrator</strong></span>
+      </p>
+
+      <div><i>* All fields are required</i></div>
+      <% if  @user.errors.any? %>
+
+          <%= find_correct_partial(selected_role) %>
+
+      <% else %>
+          <!-- Render both divs. The admin div is hidden by default with css in general.css -->
+          <div id="admin-user">
+            <%= render "admin" %>
+          </div>
+          <div id="alumni-user">
+            <%= render "alumni" %>
+          </div>
+
+      <% end %>
+      <noscript>
+        <div style="clear: both"></div>
+      </noscript>
+    </div>
+  </div>
+</div>

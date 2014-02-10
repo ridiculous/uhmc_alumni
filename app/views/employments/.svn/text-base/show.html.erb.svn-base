@@ -1,0 +1,89 @@
+<%= content('Employment Details') do %>
+    <div class="alum-div">
+      <p>
+        <b>Employer:</b>
+        <%= @employment.employer %>
+      </p>
+
+      <p>
+        <b>Work address:</b>
+        <%= @employment.work_address %>
+      </p>
+
+      <p>
+        <b>Work city:</b>
+        <%= @employment.work_city %>
+      </p>
+
+      <p>
+        <b>Work state:</b>
+        <%= @employment.work_state %>
+      </p>
+
+      <p>
+        <b>Work country:</b>
+        <%= @employment.work_country %>
+      </p>
+
+      <p>
+        <b>Work zip code:</b>
+        <%= @employment.work_zip_code %>
+      </p>
+    </div>
+
+    <div class="alum-div">
+      <p>
+        <b>Start date:</b>
+        <%= @employment.start_date.strftime("%b %d, %Y") %>
+      </p>
+
+      <p>
+        <b>End date:</b>
+        <%= @employment.work_present ? "Present" : @employment.end_date.strftime("%b %d, %Y") %>
+      </p>
+
+      <p>
+        <b>Supervisor:</b>
+        <%= @employment.supervisor %>
+      </p>
+
+      <p>
+        <b>Supervisor phone:</b>
+        <%= @employment.supervisor_phone %>
+      </p>
+
+      <p>
+        <b>Supervisor email:</b>
+        <%= @employment.supervisor_email %>
+      </p>
+
+    </div>
+
+    <div class="alum-div">
+      <p>
+        <b>Position:</b>
+        <%= @employment.position_held %>
+      </p>
+
+      <p>
+        <b>Wage:</b>
+        <%= @employment.wage %>
+      </p>
+
+      <p>
+        <b>Self Employed:</b>
+        <%= "#{@employment.self_employed ? "Yes" : "No"}" %>
+      </p>
+
+      <p>
+        <b>Job description:</b>
+        <%= @employment.job_description %>
+      </p>
+
+      <p>
+        <b>Job details:</b>
+        <%= @employment.job_details %>
+      </p>
+    </div>
+    <div class="reset"></div>
+<% end %>

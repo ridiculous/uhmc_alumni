@@ -1,0 +1,8 @@
+<div>
+  <% if @alumni %>
+
+      <%= render 'alumni_home' %>
+
+  <% end %>
+
+</div>

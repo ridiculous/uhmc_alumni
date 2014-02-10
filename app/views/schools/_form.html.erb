@@ -1,0 +1,65 @@
+<% update_listings %>
+<%= form_for([@alumni, @school]) do |f| %>
+    <%= show_error_messages(@school) %>
+    <div class="alum-div">
+      <div class="field">
+        <div><%= f.label :school_name, mark_required("School Name") %></div>
+        <div>
+          <%= f.select :school_name, (campus_options) %>
+          <%= not_listed('school') %>
+        </div>
+      </div>
+      <%= other_field('other_school') %>
+      <div class="field">
+        <div><%= f.label :degree_name, 'Degree' %></div>
+        <div>
+          <%= f.select :degree_name, (degree_options) %>
+          <%= not_listed('degree') %>
+        </div>
+      </div>
+      <%= other_field('other_degree') %>
+      <div class="field">
+        <div><%= f.label :program_name, 'Program' %></div>
+        <div>
+          <%= f.select :program_name, (program_options) %>
+          <%= not_listed('program') %>
+        </div>
+      </div>
+      <%= other_field('other_program') %>
+
+      <div class="actions">
+        <%= f.submit "Save Record", :class => 'btn success' %>
+        <%= cancel_link(alumni_schools_path(@alumni)) %>
+      </div>
+    </div>
+    <div class="alum-div">
+      <div class="field">
+        <%= f.label :completed_courses %>
+        <br/>
+        <%= f.text_area :completed_courses, :rows => "3" %>
+      </div>
+      <div class="field">
+        <%= f.label :internships %>
+        <br/>
+        <%= f.text_area :internships, :rows => "2" %>
+      </div>
+      <div class="field">
+        <%= f.label :projects %>
+        <br/>
+        <%= f.text_area :projects, :rows => "2" %>
+      </div>
+    </div>
+    <div class="alum-div">
+      <div class="field">
+        <%= f.label :date_accepted %>
+        <br/>
+        <%= f.date_select :date_accepted, :start_year => Time.now.year - 15, :end_year => Time.now.year %>
+      </div>
+      <div class="field">
+        <%= f.label :date_graduated %>
+        <br/>
+        <%= f.date_select :date_graduated, :start_year => Time.now.year - 10, :end_year => Time.now.year + 4 %>
+      </div>
+    </div>
+    <div class="reset"></div>
+<% end %>

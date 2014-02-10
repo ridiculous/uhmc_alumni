@@ -1,0 +1,28 @@
+<%= form_for(@user) do |f| %>
+    <%= f.hidden_field(:role, {:id => "admin_role", :value => (@user.role || "admin") }) %>
+    <div><%= f.label :first_name %></div>
+    <div><%= f.text_field :first_name %></div>
+    <div><%= f.label :last_name %></div>
+    <div><%= f.text_field :last_name %></div>
+    <div><%= f.label :email %></div>
+    <div><%= f.text_field :email %></div>
+    <div><%= f.label :username %></div>
+    <div><%= f.text_field :username %></div>
+    <% unless is_users_account(@user.id) #method in application helper  %>
+        <div><%= f.label :password %></div>
+        <div><%= f.password_field :password, :id => "new_password_field" %>&nbsp;<span id="pw_helper"></span></div>
+        <div><%= f.label :password_confirmation %></div>
+        <div><%= f.password_field :password_confirmation, :id => "new_password_confirm_field" %>&nbsp;<span id="confirm_pw_helper"></span>
+        </div>
+        <%= f.submit "Update user", :name => "role_admin", :class => 'btn success' %>
+        <%= cancel_link(users_path) %>
+    <% else %>
+        <p>
+          <%= f.submit "Update user", :name => "user[pw_not_being_updated]", :class => 'btn success' %>
+          <%= link_to "Change Password", "/users/edit_password/#{@user.id}", :class => 'btn primary' %>
+          <%= cancel_link(root_url) %>
+        </p>
+
+    <% end %>
+
+<% end %>

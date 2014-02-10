@@ -1,0 +1,46 @@
+<%= content('Education Details') do %>
+    <div class="alum-div">
+      <p>
+        <b>School name:</b>
+        <%= @school.school_name %>
+      </p>
+
+      <p>
+        <b>Degree name:</b>
+        <%= @school.degree_name %>
+      </p>
+
+      <p>
+        <b>Program name:</b>
+        <%= @school.program_name %>
+      </p>
+    </div>
+    <div class="alum-div">
+      <p>
+        <b>Completed Courses:</b>
+        <%= @school.completed_courses %>
+      </p>
+
+      <p>
+        <b>Internships:</b>
+        <%= @school.internships %>
+      </p>
+
+      <p>
+        <b>Projects:</b>
+        <%= @school.projects %>
+      </p>
+    </div>
+    <div class="alum-div">
+      <p>
+        <b>Date accepted:</b>
+        <%= @school.date_accepted.strftime("%b %d, %Y") %>
+      </p>
+
+      <p>
+        <b>Date graduated:</b>
+        <%= @school.date_graduated.strftime("%b %d, %Y") %>
+      </p>
+    </div>
+    <div class="reset"></div>
+<% end %>

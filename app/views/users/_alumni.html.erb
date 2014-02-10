@@ -1,0 +1,26 @@
+<div class="new-user-form">
+  <%= form_for(@user) do |f| %>
+      <p>
+        Select alumni<br/>
+        <%= f.select(:alumni_id, (Alumni.order("last_name").collect { |alum| [alum.last_name+', '+alum.first_name, alum.id] })) %>
+      </p>
+
+      <%= f.hidden_field(:role, {:id => "alumni_role", :value => "alumni"}) %>
+      <%= f.hidden_field(:first_name, {:value => "john"}) %>
+      <%= f.hidden_field(:last_name, {:value => "doe"}) %>
+      <%= f.hidden_field(:email, {:value => "johndoe@gmail.com"}) %>
+
+      <div><%= f.label :username %></div>
+      <div><%= f.text_field :username %></div>
+      <div><%= f.label :password %></div>
+      <div><%= f.password_field :password, {:id => "new_password_field"} %>&nbsp;<span id="pw_helper"></span></div>
+      <div><%= f.label :password_confirmation %></div>
+      <div><%= f.password_field :password_confirmation, {:id => "new_password_confirm_field"} %>&nbsp;<span id="confirm_pw_helper"></span>
+      </div>
+
+      <p>
+        <%= f.submit "Create user", :name => "role_alumni", :class => 'btn success' %>
+        <%= cancel_link(users_path) %>
+      </p>
+  <% end %>
+</div>

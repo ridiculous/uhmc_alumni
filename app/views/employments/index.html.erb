@@ -1,0 +1,44 @@
+<%= content('Employment Records') do %>
+    <% unless @employments.empty? %>
+        <table class="nice" cellspacing="0" cellpadding="2px">
+          <tr>
+            <th style="width:100px"></th>
+            <th>Employer</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Zip</th>
+            <th>Supervisor</th>
+            <th>Position</th>
+            <th>Start date</th>
+            <th>End date</th>
+            <th>Job description</th>
+          </tr>
+
+          <% @employments.each do |job| %>
+              <tr>
+                <td>
+                  <%= link_to '', edit_alumni_employment_path(@alumni, job), :class => 'edit' %>
+                  <%= link_to '', alumni_employment_path(@alumni, job), :class => 'details' %>
+                  <%= link_to '', alumni_employment_path(@alumni, job), :class => 'delete', :confirm => "Are you sure you want to delete employer #{job.employer}?", :method => :delete %>
+                </td>
+                <td><%= job.employer %></td>
+                <td><%= job.work_city %></td>
+                <td><%= job.work_state %></td>
+                <td><%= job.work_country %></td>
+                <td><%= job.work_zip_code %></td>
+                <td><%= job.supervisor %></td>
+                <td><%= job.position_held %></td>
+                <td><%= job.start_date.strftime("%b %d, %Y") %></td>
+                <td><%= job.work_present == true ? "Present" : job.end_date.strftime("%b %d, %Y") %></td>
+                <td><%= job.job_description %></td>
+              </tr>
+          <% end %>
+        </table>
+    <% else %>
+
+        <h3>No records</h3>
+
+    <% end %>
+    <br/>
+<% end %>

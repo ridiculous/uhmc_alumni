@@ -1,0 +1,26 @@
+if ($('#notice').length)$('#notice').hide();
+var $info = $(this);
+var $close_btn = $('<a href="javascript:void(0);" class="btn info" id="close_form">Cancel New Record</a>');
+var $alumni_link = $('#new_alumni_link');
+if (!$alumni_link.hasClass('open')) {
+    $info.data('orig', $alumni_link.html());
+    $alumni_link.addClass('open').html('Loading...');
+    $close_btn.insertAfter('#new_alumni_link');
+
+    // Load the form and wrap in divs to format
+    $('<%= escape_javascript render(:file => 'alumnis/_form.html.erb') %>')
+            .insertAfter('#admin_header')
+            .wrapAll('<div class="box-container" />')
+            .wrapAll('<div class="colorful gray" />')
+            .wrapAll('<div class="new-js-wrap content" />');
+    // hide the alumni link and fade in the close button
+    $alumni_link.fadeOut('fast',
+            function () {
+                $close_btn.fadeIn('fast');
+                $('.new-js-wrap')
+                        .prepend('<h2>New Record</h2>')
+                        .slideDown(500);
+                $alumni_link.html($info.data('orig'));
+            });
+
+}

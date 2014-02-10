@@ -1,0 +1,43 @@
+<div class="colorful gray">
+  <div class="content">
+    <% unless @alumnis.blank? %>
+        <div>
+          <%= paginate @alumnis %>
+        </div>
+        <!-- for sort persistance -->
+        <%= hidden_field_tag :direction, params[:direction] %>
+        <%= hidden_field_tag :sort, params[:sort] %>
+        <!-- e -->
+        <table class="nice" cellspacing="0" cellpadding="2" id="alumni_list_table">
+          <tr class="table-header">
+            <th style="width: 120px;"></th>
+            <th style="width:155px"><%= sortable "last_name", "Full Name" %></th>
+            <th><%= sortable "program_name", "Program" %></th>
+            <th style="width:100px"><%= sortable "date_graduated", "Grad Date" %></th>
+            <th>State</th>
+            <th>Email</th>
+            <th>Current Employer</th>
+            <th style="width:110px"><%= sortable "updated_at", "Last updated" %>  </th>
+          </tr>
+          <% remove_dups(@alumnis).each do |alumni| %>
+              <%= render 'alumni_row', :a => alumni %>
+          <% end %>
+          <% if @alumnis.count > 8 %>
+              <tr>
+                <td colspan="12">
+                  <p class="to-top">&raquo;&nbsp;<a href="#top">Top</a>&nbsp;&laquo;</p>
+                </td>
+              </tr>
+          <% end %>
+        </table>
+    <% else %>
+
+        <% if params[:cat] %>
+            <p style="font-size: 22px; color: #104D71"><%= "Results for #{params[:cat].capitalize} search: \"#{params[:users_search]}\"" %> </p>
+        <% else %>
+            <h2 style="color:#104D71">No records found in the database</h2>
+        <% end %>
+
+    <% end %>
+  </div>
+</div>

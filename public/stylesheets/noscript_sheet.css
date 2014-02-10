@@ -1,0 +1,19 @@
+#user-search-div{
+    margin-top:-10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    display:block !important
+}
+#user-search-button-span{
+    display:none;
+}
+#admin-user {
+    display: block;
+    width: 50%;
+    float: left;
+}
+#alumni-user {
+    display: block;
+    width: 50%;
+    float: left;
+}

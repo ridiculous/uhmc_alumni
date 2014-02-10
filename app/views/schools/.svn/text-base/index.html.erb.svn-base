@@ -1,0 +1,37 @@
+<%= content('Education Records') do %>
+    <% unless  @schools.empty? %>
+        <table class="nice" cellspacing="0" cellpadding="2px">
+          <tr>
+            <th style="width:100px;"></th>
+            <th>School</th>
+            <th>Degree</th>
+            <th>Program name</th>
+            <th>Date accepted</th>
+            <th>Date graduated</th>
+            <th>Internship(s)</th>
+            <th>Projects</th>
+          </tr>
+
+          <% @schools.each do |school| %>
+              <tr>
+                <td>
+                  <%= link_to '', edit_alumni_school_path(@alumni, school), :class => 'edit' %>
+                  <%= link_to '', alumni_school_path(@alumni, school), :class => 'details' %>
+                  <%= link_to '', alumni_school_path(@alumni, school), :class => 'delete', :confirm => "Delete #{school.school_name} from this Alumni's educational record?", :method => :delete %>
+                </td>
+                <td><%= school.school_name %></td>
+                <td><%= school.degree_name %></td>
+                <td><%= school.program_name %></td>
+                <td><%= school.date_accepted.strftime("%b %d, %Y") %></td>
+                <td><%= school.date_graduated.strftime("%b %d, %Y") %></td>
+                <td><%= school.internships %></td>
+                <td><%= school.projects %></td>
+              </tr>
+          <% end %>
+        </table>
+    <% else %>
+
+        <h3>No record</h3>
+
+    <% end %>
+<% end %>

@@ -1,0 +1,19 @@
+<div class="colorful gray">
+  <div class="content">
+    <div style="width:450px">
+      <h2>Edit User</h2>
+      <%= show_error_messages(@user) %>
+      <div><i>* All fields are required</i></div>
+      <% if is_admin(session[:user_role]) && is_admin(@user.role) %>
+          <div>
+            <%= render "edit_admin" %>
+          </div>
+      <% else %>
+          <div>
+            <%= render "edit_alumni" %>
+          </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>

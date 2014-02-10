@@ -1,0 +1,10 @@
+<div class="alum-header">
+  <span>
+    <%= link_to @alumni.full_name, "/alumnis/summary/#{@alumni.id}", {:title => "View Summary for #{@alumni.full_name}", :class => "alumni-name"} %>
+    &nbsp;&nbsp;
+    <%= link_to 'Education', alumni_schools_path(@alumni), :class => 'btn' %>
+    <%= link_to '+', new_alumni_school_path(@alumni), :class => 'btn' %>
+    <%= link_to 'Employment', alumni_employments_path(@alumni), :class => 'btn' %>
+    <%= link_to '+', new_alumni_employment_path(@alumni), :class => 'btn' %>
+  </span>
+</div>

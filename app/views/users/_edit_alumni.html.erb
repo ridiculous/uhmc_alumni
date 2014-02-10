@@ -1,0 +1,34 @@
+<%= form_for(@user) do |f| %>
+
+    <%= f.hidden_field(:alumni_id, {:value => @user.alumni_id}) %>
+    <%= f.hidden_field(:role, {:id => "alumni_role", :value => "alumni"}) %>
+
+    <% if is_admin %>
+        <div style="padding:7px 2px;">
+          <%= link_to(Alumni.find(@user.alumni_id).full_name, "/alumnis/summary/#{@user.alumni_id}", {:title => "View summary", :class => 'btn'}) %>
+        </div>
+        <div>
+          <%= f.label :username %>
+        </div>
+        <div>
+          <%= f.text_field :username %>
+        </div>
+    <% else %>
+        <p style="font-size:17px;">Username:&nbsp;<%= @user.username %></p>
+        <%= f.hidden_field(:username, {:value => @user.username}) %>
+    <% end %>
+
+    <div><%= f.label :password %></div>
+    <div><%= f.password_field :password, {:value => "", :id => "new_password_field"} %>&nbsp;<span id="pw_helper"></span>
+    </div>
+
+    <div><%= f.label :password_confirmation %></div>
+    <div><%= f.password_field :password_confirmation, :id => "new_password_confirm_field" %>&nbsp;<span id="confirm_pw_helper"></span>
+    </div>
+    <p>
+      <%= f.submit "Update user", :name => "role_alumni", :class => 'btn success' %>
+      &nbsp;or&nbsp;
+      <%= cancel_link(users_path) %>
+    </p>
+
+<% end %>

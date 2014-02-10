@@ -1,0 +1,23 @@
+<div class="new-user-form">
+  <%= form_for(@user) do |f| %>
+      <%= f.hidden_field(:role, {:id => "admin_role", :value => "admin"}) %>
+      <div><%= f.label :first_name %></div>
+      <div><%= f.text_field :first_name %></div>
+      <div><%= f.label :last_name %></div>
+      <div><%= f.text_field :last_name %></div>
+      <div><%= f.label :email %></div>
+      <div><%= f.text_field :email %></div>
+      <div><%= f.label :username %></div>
+      <div><%= f.text_field :username %></div>
+      <div><%= f.label :password %></div>
+      <div><%= f.password_field :password, {:id => "new_password_field"} %>&nbsp;<span id="pw_helper"></span></div>
+      <div><%= f.label :password_confirmation %></div>
+      <div><%= f.password_field :password_confirmation, {:id => "new_password_confirm_field"} %>&nbsp;<span id="confirm_pw_helper"></span>
+      </div>
+      <p>
+        <%= f.submit "Create user", :name => "role_admin", :class => 'btn success' %>
+        <%= cancel_link(users_path) %>
+      </p>
+
+  <% end %>
+</div>

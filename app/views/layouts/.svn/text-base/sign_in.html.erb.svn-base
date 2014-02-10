@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Maui College Record Management - Sign in</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+  <%= favicon_link_tag "/images/uh_icon.png" %>
+</head>
+<body style="background: url('/images/new_bg_v3.jpg') top repeat-x">
+<div class="box-container" style="width: 500px;margin: auto;margin-top: 100px;">
+  <div class="colorful gray">
+    <div class="header" style="font-family: 'BRUSH SCRIPT MT', Geneva, sans;font-size:20px;padding:5px 5px 5px 10px;">
+      Record Management - Log In
+      <%= link_to "Back", "http://maui.hawaii.edu/alumni/alumni.php", :class => 'btn fr' %>
+    </div>
+  </div>
+  <div class="colorful gray">
+    <% if notice || request.flash.any? %>
+        <div id="notice" class="flash <%= request.flash.alert.blank? ? "info" : "error" %>">
+          <div class="header" id="notice_content">
+            <%= notice || request.flash.alert || request.flash.notice %>
+          </div>
+        </div>
+    <% end %>
+    <div class="content">
+      <%= yield %>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

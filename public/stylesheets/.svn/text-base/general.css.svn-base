@@ -1,0 +1,629 @@
+table {
+    width: 100%;
+}
+
+a {
+    color: #003163;
+    font-size: 17px;
+}
+
+.aloha-user {
+    font-size: 21px;
+    font-family: Geneva, Georgia, sans-serif, sans;
+    color: #7C7C7C;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+.alumni-name {
+    font-size: 20px !important;
+    text-decoration: none;
+}
+
+.btn-wrap {
+    width: 205px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-box {
+    width: auto;
+    float: left;
+    font-size: 14px;
+    text-align: left
+}
+
+.btn-box a {
+    font-size: 17px;
+}
+
+.clickhere {
+    color: #0280BF;
+    cursor: pointer;
+}
+
+.btn-delete {
+    width: 65px;
+    float: left;
+    margin-top: -3px
+}
+
+.link-wrap {
+    width: 100%;
+    height: 32px;
+}
+
+.link-wrap a {
+    font-size: 12px;
+}
+
+.newalum, .newuser, #other_program, #other_degree, #other_school {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.newalum {
+    margin-left: 8px;
+    margin-bottom: 7px;
+    padding: 5px !important;
+    background: #B9E2FA !important;
+    border: 1px solid #0E6590 !important;
+}
+
+.newuser {
+    margin-right: 2px;
+    margin-left: 7px;
+    margin-bottom: 7px;
+    padding: 3px !important;
+    background: #B9E2FA !important;
+    border: 1px solid #0E6590 !important;
+}
+
+.newalum a, .newuser a {
+    color: #104D71 !important;
+}
+
+.newalum:hover, .newuser:hover {
+    border: 2px solid #24900E !important;
+}
+
+#admin-user {
+    display: none;
+}
+
+.alum-div {
+    float: left;
+    padding: 17px;
+}
+
+.alumni-form-wrap div.alum-div {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.alum-div input {
+    width: 220px;
+    margin: 2px;
+}
+
+.alum-header {
+    padding: 5px 0px;
+    color: #FFF;
+    font-size: 16px;
+}
+
+.alum-header a {
+    color: #7C7C7C;
+    font-size: 16px;
+}
+
+.alum-header a:hover {
+    color: #003163;
+}
+
+.assist {
+    font-size: 16px;
+    color: #E39B00
+}
+
+.assist a {
+    font-size: 16px;
+    color: #E39B00;
+    text-decoration: none;
+}
+
+.categories {
+    color: #104D71;
+    font-family: georgia;
+    font-size: 18px
+}
+
+body, div, p, span, small, a {
+    font-family: Helvetica;
+}
+
+.c {
+    color: #104D71;
+    font-family: georgia;
+    font-size: 14px
+}
+
+#container {
+    padding: 20px;
+    background: transparent;
+
+}
+
+div.field, div.actions {
+    margin-bottom: 10px;
+
+}
+
+div.actions input {
+    width: 120px;
+}
+
+.field_with_errors {
+    background-color: #66B7E7;
+    display: table;
+}
+
+.field_with_errors label {
+    background-color: white;
+    display: table-row;
+}
+
+.new-js-wrap {
+    display: none;
+}
+
+.new-js-wrap h2 {
+    padding-left: 18px;
+    margin-bottom: 0;
+}
+
+.list-form-errors {
+    display: none;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+#error_explanation {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.3) 1px 2px 15px 1px;
+}
+
+#error_explanation {
+    width: 350px;
+    border: 2px solid #0E6590;
+    padding: 7px;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+}
+
+#error_explanation h2, .list-form-errors h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 14px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #0E6590;
+    color: #fff;
+}
+
+#error_explanation ul li, .list-form-errors ul li {
+    font-size: 17px;
+    list-style: disc;
+}
+
+.head-er {
+    font-size: 48px;
+    color: #E3C700;
+    left: 1%;
+    position: relative;
+
+}
+
+.head-er a {
+    font-size: 18px;
+    color: #E3C700
+}
+
+.head-er a:hover {
+    color: teal;
+    background-color: #E3C700
+}
+
+.head-under {
+    font-family: Georgia;
+    color: #104D71;
+    position: relative;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0.67em 0px;
+
+}
+
+#home_link_tab {
+    width: 40px;
+    margin-left: -5px;
+}
+
+#logout_link_tab {
+    width: 64px;
+}
+
+#password_link_tab {
+    width: 130px;
+}
+
+#password_link_tab, #logout_link_tab, #account_link_tab, #users_link_tab {
+    margin-left: 5px;
+}
+
+#account_link_tab {
+    width: 91px;
+}
+
+#users_link_tab {
+    width: 100px;
+}
+
+#home_link_tab, #logout_link_tab, #password_link_tab, #account_link_tab, #users_link_tab {
+    /* General look of menu tabs */
+    margin-top: -26px;
+    background: #fff;
+    display: none;
+    border: 2px solid grey;
+    border-bottom: none;
+    padding: 6px;
+    height: 15px;
+    position: absolute;
+    z-index: -1;
+}
+
+h1, h2 {
+    margin: 0;
+    padding: 5px;
+}
+
+h1 {
+    color: #104D71;
+    font-family: georgia;
+}
+
+h2 {
+    color: #104D71;
+    font-family: georgia;
+}
+
+h3 {
+    color: #E39B00
+}
+
+#img-container {
+    background: white url(/images/uhmc_logo.gif) no-repeat top center;
+    width: 250px;
+    height: 150px;
+    position: relative;
+    float: left;
+    margin: 1px;
+}
+
+#inner-sign {
+    padding: 50px;
+    background: white;
+    border-top-right-radius: 8px 8px;
+    border-top-left-radius: 8px 8px;
+    border-bottom-right-radius: 8px 8px;
+    border-bottom-left-radius: 8px 8px;
+    border: 1px solid black
+}
+
+.mouseOv {
+    color: #104D71
+}
+
+.mouseOut {
+    text-decoration: none;
+    color: black;
+}
+
+.nice {
+    position: relative;
+    width: 100%;
+}
+
+.nice td {
+    font-size: 17px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.nice td a {
+    text-decoration: none;
+}
+
+.nice th .current {
+    background-color: #959595;
+    font-size: 16px;
+    font-family: Georgia;
+    color: white;
+    margin: 1px 1px;
+    padding-right: 12px;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.nice th {
+    border-bottom: 1px solid white;
+    background-color: #959595;
+    font-size: 16px;
+    font-family: Georgia;
+    color: white;
+    margin: 1px 1px;
+}
+
+.nice th a {
+    color: white;
+    font-family: Helvetica
+}
+
+.nice th .asc {
+    background-image: url(/images/down-triangle.gif);
+}
+
+.nice th .desc {
+    background-image: url(/images/up-triangle.gif);
+}
+
+.nice tr:hover {
+    background-color: #E6E6FA;
+}
+
+.nav {
+    margin: -25px 25px 10px 5px;
+}
+
+.nav a {
+    font-size: 18px
+}
+
+.nav-links {
+    z-index: 1111111;
+    float: left;
+    padding: 4px 0 0 40px;
+}
+
+.nav-links a {
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.new-user-form {
+    border: 1px solid grey;
+    padding: 10px;
+    background: whitesmoke;
+}
+
+/*#notice {*/
+/*border: 3px solid #006699;*/
+/*background-color: lightskyblue;*/
+/*font-family: georgia;*/
+/*font-size: 24px;*/
+/*text-align: center;*/
+/*width: 60%;*/
+/*padding: 5px;*/
+/*color: #006699;*/
+/*}*/
+
+#other_program, #other_degree, #other_school {
+    display: none;
+    margin-bottom: 10px;
+    border: 1px solid grey;
+    padding: 5px;
+    background: whitesmoke
+}
+
+#out {
+    margin: 5px 10px 15px 15px;
+
+}
+
+#outer {
+    width: 650px;
+    height: 420px;
+    margin: auto;
+    margin-top: 75px;
+}
+
+pre {
+    background-color: #eee;
+    padding: 10px;
+    font-size: 11px;
+}
+
+#pw_helper {
+}
+
+#confirm_pw_helper {
+}
+
+.too-short {
+    color: red
+}
+
+.good-enough {
+    color: green
+}
+
+.topper-title {
+    position: relative;
+    left: 300px;
+    top: 5px;
+    font-size: 50px;
+    font-family: 'BRUSH SCRIPT MT', Geneva, Georgia;
+    letter-spacing: .2em;
+    color: #006699;
+}
+
+#top-container {
+    padding: 5px;
+    background-color: white;
+    border-top-right-radius: 5px 5px;
+    border-top-left-radius: 5px 5px;
+    border-bottom-right-radius: 5px 5px;
+    border-bottom-left-radius: 5px 5px;
+}
+
+.to-top {
+    text-align: center;
+    color: #006699;
+    font-size: 16px
+}
+
+.reset {
+    clear: both;
+}
+
+#sign-in {
+    font-size: 18px;
+    color: #003163;
+    background-color: #D8D8D8;
+    padding: 5px
+}
+
+.single-alumn-header {
+    font-size: 17px;
+    color: #B0B0B0;
+}
+
+.single-alumn-header a, .single-alumn-header a:visited {
+    font-size: 17px;
+    color: #069;
+}
+
+.single-alumn-header a:hover {
+    font-size: 17px;
+    color: #E39B00;
+}
+
+.shiftcontainer {
+    position: relative;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1160px;
+    height: 100%;
+}
+
+.shadow {
+    background-color: #AEAEAE;
+}
+
+.shadow .innerdiv {
+    background-color: white;
+    border: 1px solid gray;
+    position: relative;
+    left: -4px;
+    top: -4px;
+    padding: 10px;
+}
+
+.shadow, .shadow .innerdiv {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.sub-container {
+    width: 530px;
+    height: auto;
+    border: none;
+}
+
+.sub-header {
+    color: #B0B0B0;
+    font-size: 24px;
+    width: 45%;
+    padding-bottom: 3px;
+}
+
+.sub-header .alumni-name {
+    color: #104D71;
+}
+
+.sub-header a {
+    color: #B0B0B0;
+    font-size: 17px;
+}
+
+.sub-header a:hover {
+    color: #003163;
+    font-size: 17px;
+}
+
+.txt-required {
+    font-style: italic;
+    font-size: 11px
+}
+
+#user-search-div {
+    padding-left: 10px;
+    padding-bottom: 5px;
+    display: none
+}
+
+#user-search-button-span {
+    padding: 10px;
+    padding-left: 0px;
+    font-size: 16px;
+}
+
+.employment-date-checkbox {
+    margin-left: -100px !important;
+    margin-right: -100px !important;
+}
+
+a.edit,
+a.delete,
+a.details,
+a.summary {
+    padding: 3px 14px;
+}
+
+a.edit {
+    background: url(/images/icons/187-pencil.png) bottom left no-repeat;
+}
+
+a.details {
+    background: url(/images/icons/06-magnify.png) bottom left no-repeat;
+}
+
+a.delete {
+    background: url(/images/icons/146-gavel.png) bottom left no-repeat;
+}
+
+a.summary {
+    background: url(/images/icons/33-cabinet.png) bottom left no-repeat;
+}
+
+#close_form {
+    display: none;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}

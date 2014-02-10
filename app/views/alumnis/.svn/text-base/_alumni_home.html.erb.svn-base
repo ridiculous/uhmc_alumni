@@ -1,0 +1,103 @@
+<%= content do %>
+    <table class="nice" cellspacing="0" cellpadding="2px">
+      <tr>
+        <th style="width: 90px;"></th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+        <th>Country</th>
+        <th>Email</th>
+        <th>Home phone</th>
+        <th>Grad Date</th>
+      </tr>
+      <tr>
+        <td>
+          <%= link_to '', edit_alumni_path(@alumni), :class => 'edit' %>
+          <%= link_to '', @alumni, :class => 'details' %>
+        </td>
+        <td><%= @alumni.mailing_address %></td>
+        <td><%= @alumni.city %></td>
+        <td><%= @alumni.state %></td>
+        <td><%= @alumni.zip_code %></td>
+        <td><%= @alumni.country %></td>
+        <td><%= @alumni.email %></td>
+        <td><%= @alumni.home_phone %></td>
+        <td><%= School.where("alumni_id = ?", @alumni.id).first.date_graduated.strftime("%b %d, %Y") rescue nil %></td>
+
+      </tr>
+    </table>
+    <br/>
+    <div style="padding-left: 20px; padding-right: 20px">
+      <div class="sub-container" style="float:left">
+        <div class="sub-header" style="width:auto;text-align: center">
+          <h2>Education</h2>
+        </div>
+        <% unless  @schools.empty? %>
+            <table class="nice" cellspacing="0" cellpadding="2px">
+              <tr>
+                <th style="width: 100px;"></th>
+                <th>School</th>
+                <th>Degree</th>
+                <th>Program</th>
+              </tr>
+              <% @schools.each do |school| %>
+                  <tr>
+                    <td>
+                      <%= link_to '', edit_alumni_school_path(@alumni, school), :class => 'edit' %>
+                      <%= link_to '', alumni_school_path(@alumni, school), :class => 'details' %>
+                      <%= link_to '', alumni_school_path(@alumni, school), :class => 'delete', :confirm => "Delete #{school.school_name} from this Alumni's educational record?", :method => :delete %>
+                    </td>
+                    <td><%= school.school_name %></td>
+                    <td><%= school.degree_name %></td>
+                    <td><%= school.program_name %></td>
+
+                  </tr>
+              <% end %>
+            </table>
+        <% else %>
+            <div style="text-align:center">
+              <div style="border: 2px solid grey;padding: 10px;">
+                <%= link_to '+ Add a Record', new_alumni_school_path(@alumni), :class => 'btn primary' %>
+              </div>
+            </div>
+        <% end %>
+      </div>
+      <div class="sub-container" style="float:right">
+        <div class="sub-header" style="width:auto;text-align: center">
+          <h2>Employment</h2>
+        </div>
+        <% unless @jobs.empty? %>
+            <table class="nice" cellspacing="0" cellpadding="2px">
+              <tr>
+                <th style="width: 100px;"></th>
+                <th>Employer</th>
+                <th>Position</th>
+                <th>Start date</th>
+                <th>End date</th>
+              </tr>
+              <% @jobs.each do |job| %>
+                  <tr>
+                    <td>
+                      <%= link_to '', edit_alumni_employment_path(@alumni, job), :class => 'edit' %>
+                      <%= link_to '', alumni_employment_path(@alumni, job), :class => 'details' %>
+                      <%= link_to '', alumni_employment_path(@alumni, job), :class => 'delete', :confirm => "Are you sure you want to delete employer #{job.employer}?", :method => :delete, :fromhome => 1 %>
+                    </td>
+                    <td><%= job.employer %></td>
+                    <td><%= job.position_held %></td>
+                    <td><%= job.start_date.strftime("%b %d, %Y") %></td>
+                    <td><%= job.work_present == true ? "Present" : job.end_date.strftime("%b %d %Y") %></td>
+                  </tr>
+              <% end %>
+            </table>
+        <% else %>
+            <div style="text-align:center">
+              <div style="border: 2px solid grey;padding: 10px;">
+                <%= link_to '+ Add a Record', new_alumni_employment_path(@alumni), :class => 'btn primary' %>
+              </div>
+            </div>
+        <% end %>
+      </div>
+    </div>
+    <div style="clear:both"></div>
+<% end %>

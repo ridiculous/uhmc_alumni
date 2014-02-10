@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  school_name: MyString
+  degree_name: MyString
+  program_name: MyString
+  date_accepted: 2011-01-20
+  date_graduated: 2011-01-20
+  internships: MyString
+  projects: MyString
+  alumni_id: 1
+
+two:
+  school_name: MyString
+  degree_name: MyString
+  program_name: MyString
+  date_accepted: 2011-01-20
+  date_graduated: 2011-01-20
+  internships: MyString
+  projects: MyString
+  alumni_id: 1

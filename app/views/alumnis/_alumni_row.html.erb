@@ -1,0 +1,24 @@
+<tr>
+  <td valign="middle">
+    <%= link_to '', "/alumnis/summary/#{a.id}", :class => 'summary' %>
+    <%= link_to '', edit_alumni_path(a), :class => 'edit' %>
+    <%= link_to '', alumni_path(a), :class => 'details' %>
+    <%= link_to '', a, :class => 'delete', :confirm => "Are you sure you want to delete #{a.first_name}'s record? If #{a.first_name} has a user account, it will also be deleted.", :method => :delete %>
+  </td>
+  <td>
+    <div>
+      <%= a.last_name+', '+a.first_name+' '+a.mi %>
+    </div>
+    <div class="link-wrap">
+      <%= job_link(a) %>
+      <%= edu_link(a) %>
+    </div>
+    <div class="reset"></div>
+  </td>
+  <td><%= School.where("alumni_id = ?", a.id).first.program_name rescue nil %></td>
+  <td><%= a.schools.first.date_graduated.strftime("%b %d, %Y") rescue nil %></td>
+  <td><%= a.state %></td>
+  <td><%= a.email %></td>
+  <td><%= link_to_employer(a) %></td>
+  <td><%= format_date_difference(a.updated_at) %></td>
+</tr>
